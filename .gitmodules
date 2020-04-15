@@ -1,0 +1,6 @@
+[submodule "web-client"]
+	path = web-client
+	url = https://github.com/buy-my-stuff-app/web-client.git
+[submodule "api-gateway"]
+	path = api-gateway
+	url = https://github.com/buy-my-stuff-app/api-gateway.git
