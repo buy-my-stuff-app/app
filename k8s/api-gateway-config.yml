@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: api-gateway
+  template:
+    metadata:
+      labels:
+        component: api-gateway
+    spec:
+      containers:
+        - name: api-gateway
+          image: raulcontrerasrubio/buymystuffapp-api-gateway
+          ports:
+            - containerPort: 5000
+---
+apiVersion: v1
+kind: ClusterIP
+metadata:
+  name: api-gateway-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    component: api-gateway
+  ports:
+    - port: 5000
+      targetPort: 5000
