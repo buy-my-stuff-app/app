@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-client-deployment
+  namespace: buymystuffapp
 spec:
   replicas: 1
   selector:
