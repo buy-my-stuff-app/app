@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: web-client
+  template:
+    metadata:
+      labels:
+        component: web-client
+    spec:
+      containers:
+        - name: web-client
+          image: raulcontrerasrubio/buymystuffapp-web-client
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-client-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    component: web-client
+  ports:
+    - port: 3000
+      targetPort: 3000
