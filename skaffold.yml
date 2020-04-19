@@ -26,5 +26,5 @@ build:
 deploy:
   kubectl:
     manifests:
-      - k8s/web-client-config.yml
-      - k8s/api-gateway-config.yml
+      - k8s/microservices/web-client-config.yml
+      - k8s/microservices/api-gateway-config.yml

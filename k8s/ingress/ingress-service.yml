@@ -5,6 +5,7 @@ metadata:
   namespace: buymystuffapp
   annotations:
     kubernetes.io/ingress.class: nginx
+    kubernetes.io/controller.scope.namespace: buymystuffapp
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
     cert-manager.io/cluster-issuer: issuer-prod
