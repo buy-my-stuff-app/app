@@ -11,4 +11,6 @@ kubectl delete \
 kubectl delete \
   -f k8s/namespaces
 
+kubens default
+
 printf "\n\nAll project resources deleted"
